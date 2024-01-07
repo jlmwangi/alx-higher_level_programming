@@ -1,0 +1,70 @@
+import the function from the module:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+check for module docstring
+	>>> m = __import__("5-text_indentation").__doc__
+	len(m) > 1
+	True
+
+check for function docstring:
+	>>> f = __import__("5-text_indentation").text_indentation.__doc__
+	>>> len(f) > 1
+	True
+
+check for one word:
+	>>> text_indentation("woza")
+	woza
+
+check for newline at beginning:
+	>>> text_indentation("\n Hey. can i leave?")
+	<BLANKLINE>
+	Hey.
+	<BLANKLINE>
+	can i leave?
+	<BLANKLINE>
+
+check for newline at the middle:
+	>>> text_indentation("Hey. \n can i leave?")
+	Hey.
+	<BLANKLINE>
+	can i leave?
+	<BLANKLINE>
+
+check for newline at the end:
+	>>> text_indentation("Hey, can i leave?\n")
+	Hey, can i leave?
+	<BLANKLINE>
+	<BLANKLINE>
+
+check for multiple spaces:
+	>>> text_indentation("  Hey.  can i leave?  ")
+	Hey.
+	<BLANKLINE>
+	can i leave?
+	<BLANKLINE>
+
+check for special characters standing alone:
+	>>> text_indentation(" . ? : ")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+
+check for ending in special characters:
+	>>> text_indentation("holbertonschool-alx_higher_level_programming. 0x07-python_test_driven_development?tests: 5-text_indentation.")
+	holbertonschool-alx_higher_level_programming.
+	<BLANKLINE>
+	0x07-python_test_driven_development?
+	<BLANKLINE>
+	tests:
+	<BLANKLINE>
+	5-text_indentation.
+	<BLANKLINE>
+
+check for ending in non-special characters:
+	>>> text_indentation("holbertonschool-alx_higher_level_programming. 0x07-python_test_driven_development")
+	holbertonschool-alx_higher_level_programming.
+	<BLANKLINE>
+	0x07-python_test_driven_development

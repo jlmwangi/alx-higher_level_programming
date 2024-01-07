@@ -1,0 +1,65 @@
+importing the function from the module:
+	>>> print_square = __import__("4-print_square").print_square
+
+check for module docstring:
+	>>> m = __import__("4-print_square").__doc__
+	len(m) > 1
+	True
+
+check for function docstring:
+	>>> f = __import__("4-print_square").print_square.__doc__
+	>>> len(f) > 1
+	True
+
+check for no args:
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: missing required argument
+
+check for too many args:
+	>>> print_square(2,4)
+	Traceback (most recent call last):
+	...
+	TypeError: Too many arguments given
+
+check for positive integers:
+	>>>print_square(0)
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+	>>> print_square(2)
+	##
+	##
+
+check for non-number types:
+	>>> print_square(False)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+	>>> print_square("string")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+	>>> print_square({key:value})
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+check for negative numbers:
+	>>> print_square(-2.0)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+	>>> print_square(-4)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+check for floats:
+	>>> print_square(2.2)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer

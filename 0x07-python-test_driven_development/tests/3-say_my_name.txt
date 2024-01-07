@@ -1,0 +1,50 @@
+import the function from the module
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+check for module docstring:
+	>>> m = __import__("3-say_my_name").__doc__
+	>>> len(m) > 1
+	True
+
+check for function docstring:
+	>>> f = __import__("3-say_my_name").say_my_name.__doc__
+	>>> len(f) > 1
+	True
+
+check for regular use:
+	>>> say_my_name("Mwangi", "Lewis")
+	My name is Mwangi Lewis
+
+check for one arg:
+	>>> say_my_name("Mwangi")
+	My name is Mwangi
+
+check for more than two args:
+	>>> say_my_name("game", "of", "thrones")
+	Traceback (most recent call last):
+	...
+	TypeError: arguments exceed the required number
+
+check for passing wrong type as first name:
+	>>> say_my_name(2, "mbili")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+check for passing wrong type as last name:
+	>>> say_my_name("more", [4])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+check for passing None as first name:
+	>>> say_my_name(None, "love")
+	Traceback (most recent call last)
+	...
+	TypeError: first_name must be a string
+
+check for passing None as last name:
+	>>> say_my_name("love", None)
+	Traceback (most recent call last)
+	...
+	TypeError: last_name must be a string
