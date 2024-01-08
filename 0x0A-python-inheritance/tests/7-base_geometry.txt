@@ -1,0 +1,56 @@
+subclass that determines if the value is an int
+
+>>> m = __import__('7-base_geometry').__doc__
+>>> len(m) > 1
+True
+
+>>> f = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> len(f) > 1
+True
+
+>>> c = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+>>> a = __import__('7-base_geometry').BaseGeometry.area.__doc__
+>>> len(a) > 1
+True
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+checks if less than 2 arguments are passed:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age")
+	Traceback (most recent call last):
+	...
+	TypeError: arguments must be two
+
+check if more than two arguments are passed:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", 4, 9)
+	Traceback (most recent call last):
+	...
+	TypeError: arguments must be two
+
+check if first argument is a string:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator(9, 9)
+	Traceback (most recent call last):
+	...
+	TypeError: first argument must be a string
+
+checks if second argument is an int:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", "name")
+	Traceback (most recent call last)
+	...
+	TypeError: second argument must be an int
+
+checks if age <= 0:
+	>>> bg = BaseGeometry()
+	>>> bg,integer_validator("age", 0)
+	Traceback (most recent call last):
+	...
+	TypeError: age must be greater than 0
+
