@@ -23,7 +23,9 @@ def list_namestate():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.name == argv[4]).first()
+    name = argv[4]
+
+    state = session.query(State).filter(State.name == name).first()
     if state:
         print(state.id)
     else:
