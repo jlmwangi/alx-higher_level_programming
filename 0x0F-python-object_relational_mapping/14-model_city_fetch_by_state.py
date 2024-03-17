@@ -26,7 +26,7 @@ def list_cities():
 
     cities = session.query(City, State).join(State).order_by(City.id).all()
     for city, state in cities:
-        print(state.name, ':', city.id, city.name)
+        print(state.name, ':', (city.id), city.name)
 
 
 if __name__ == "__main__":
