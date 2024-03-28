@@ -1,4 +1,3 @@
 #!/usr/bin/bash
 # sends a delete request
-
-curl -sLX DELETE $1
+curl -sX DELETE "$1"
