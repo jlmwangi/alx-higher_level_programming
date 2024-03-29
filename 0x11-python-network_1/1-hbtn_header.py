@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-# takes in a url, sends a request and displays value of X-Request-Id found in header
+# takes in a url, sends a request and displays value of X-Request-Id
 
 from sys import argv
 from urllib.request import urlopen
+
 
 if __name__ == "__main__":
     """runs only if its main code"""

@@ -8,7 +8,7 @@ if __name__ == "__main__":
     """takes in a letter as parameter"""
     try:
         q = sys.argv[1]
-    except:
+    except IndexError:
         q = ""
 
     url = 'http://0.0.0.0:5000/search_user'
@@ -23,5 +23,5 @@ if __name__ == "__main__":
             j_id = j_son.get('id')
             j_name = j_son.get('name')
             print(f"[{j_id}] {j_name}")
-    except:
+    except ValueError:
         print("Not a valid JSON")
