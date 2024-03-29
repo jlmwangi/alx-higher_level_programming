@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # takes in a url, sends a request and displays value of X-Request-Id
 
-from sys import argv
+import sys
 from urllib.request import urlopen
 
 
