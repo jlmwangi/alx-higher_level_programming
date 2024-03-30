@@ -6,13 +6,12 @@ import urllib.request
 
 def hbtn_status():
     """fetches https://alx-intranet.hbtn.io/status"""
-    req = urllib.request.Request("https://alx-intranet.hbtn.io/status")
-    with urllib.request.urlopen(req) as r:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as r:
         html = r.read()
         print("Body response:")
-        print("    - type:", type(html))
-        print("    - content:", html)
-        print("    - utf8 content:", html.decode('utf-8'))
+        print("\t- type:", type(html))
+        print("\t- content:", html)
+        print("\t- utf8 content:", html.decode('utf-8'))
 
 
 if __name__ == "__main__":
