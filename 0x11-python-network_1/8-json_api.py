@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes in a letter, sends a post request with the letter as parameter
+""" takes in a letter, sends a post request with the letter as parameter"""
 
 import sys
 import requests

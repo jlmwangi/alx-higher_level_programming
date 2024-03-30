@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes a url and email,sends a post with email as parameter and displays body
+""" takes a url and email,sends a post with email as parameter and displays body"""
 
 import requests
 import sys

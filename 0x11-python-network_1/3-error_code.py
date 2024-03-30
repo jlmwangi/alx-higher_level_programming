@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes a url, sends a request and displays body of response decoded in utf-8
+""" takes a url, sends a request and displays body of response decoded in utf-8"""
 
 import sys
 import urllib.request

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# takes a url and an email, sends a post request to the url using the email
-# displays body of the response(decoded in utf-8)
+"""takes a url and an email, sends a post request to the url using the email
+ displays body of the response(decoded in utf-8)"""
 
 import sys
 from urllib.request import urlopen, Request

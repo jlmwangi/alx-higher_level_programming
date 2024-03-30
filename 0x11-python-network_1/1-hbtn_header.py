@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# takes in a url, sends a request and displays value of X-Request-Id
+""" takes in a url, sends a request and displays value of X-Request-Id"""
 
 import sys
 from urllib.request import urlopen
